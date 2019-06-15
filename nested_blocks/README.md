@@ -1,5 +1,7 @@
 If you see more than a level or two of indent, this is a sign that it may be time to refactor your code. Let's
-look at an example. Open up your javascript console and copy and paste these examples to see them run.
+look at an example, blow.
+
+Tip: Paste these examples into your javascript console in your browser.
 
 # Don't do this
 ```js
