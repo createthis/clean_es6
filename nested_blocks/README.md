@@ -94,3 +94,78 @@ Next, start with the inner most loop and break it out into another method:
   make_spaghetti('foo','bar','baz');
 }
 ```
+
+Good. This code is starting to flatten out. Flat code is readable code.
+
+Notice how it is now very clear that the `inner_loop()` method takes exactly one argument. This is extremely important. One of the biggest problems with heavily nested code is that it is very difficult to figure out how many dependencies the inner loop has.
+
+**Do** use an `options` object for your inner loop method if you find your inner loop has more than three arguments.
+
+## Step 3: break outer loop out into another method
+
+```js
+{
+  let inner_loop = (third) => {
+    if (third) {
+      console.log('third');
+    } else {
+      console.log('not third');
+    }
+  }
+
+  let outer_loop = (second, third) => {
+    if (second) {
+      for (let y = 0; y < 10; y++) {
+        inner_loop(third);
+      }
+    } else {
+      console.log('not second');
+    }
+  }
+  
+  let make_spaghetti = (first, second, third) => {
+    if (!first) return;
+    for (let x = 0; x < 10; x++) {
+      outer_loop(second, third);
+    }
+  }
+
+  make_spaghetti('foo','bar','baz');
+}
+```
+
+Great! This is much more readable. It is now clear that the outer loop takes two arguments. The code is much flatter and more readable.
+
+## Step 4: Invert if and return in outer loop
+
+Now that our outer loop is a method, we can make use of `return` to make it even more succinct and readable.
+
+```js
+{
+  let inner_loop = (third) => {
+    if (third) {
+      console.log('third');
+    } else {
+      console.log('not third');
+    }
+  }
+
+  let outer_loop = (second, third) => {
+    if (!second) return console.log('not second');
+    for (let y = 0; y < 10; y++) {
+      inner_loop(third);
+    }
+  }
+  
+  let make_spaghetti = (first, second, third) => {
+    if (!first) return;
+    for (let x = 0; x < 10; x++) {
+      outer_loop(second, third);
+    }
+  }
+
+  make_spaghetti('foo','bar','baz');
+}
+```
+
+This is great! The code is now very readable, flat, and clean.
