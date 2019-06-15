@@ -27,9 +27,9 @@ look at an example. Open up your javascript console and copy and paste these exa
 ```
 
 The above code is hard to read.
-It becomes more unreadable as the inner loop becomes longer.
-It becomes more unreadable as the number of variables increase.
-It becomes more unreadable as the number of indent levels increase.
+- It becomes more unreadable as the inner loop becomes longer.
+- It becomes more unreadable as the number of variables increase.
+- It becomes more unreadable as the number of indent levels increase.
 
 # Do this instead
 
