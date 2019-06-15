@@ -6,7 +6,7 @@ look at an example, below.
 Tip: Paste these examples into your javascript console in your browser.
 
 # Don't do this
-```js {.line-numbers}
+```js
 {
   let make_spaghetti = (first, second, third) => {
     if (first) {
