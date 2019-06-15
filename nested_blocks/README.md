@@ -26,11 +26,17 @@ look at an example. Open up your javascript console and copy and paste these exa
 }
 ```
 
-The above code is very hard to read.
+The above code is hard to read.
+It becomes more unreadable as the inner loop becomes longer.
+It becomes more unreadable as the number of variables increase.
+It becomes more unreadable as the number of indent levels increase.
 
 # Do this instead
 
-Let's refactor the above code step by step to be cleaner. The first line is an `if` statement that wraps the entire method.
+Let's refactor the above code, step by step, to be cleaner.
+
+## Step 1 - invert if and return
+The first line is an `if` statement that wraps the entire method.
 We can eliminate this block by flipping the sign and returning:
 
 ```js
@@ -56,7 +62,11 @@ We can eliminate this block by flipping the sign and returning:
 }
 ```
 
-That's a little better already. Next, start with the inner most loop and break it out into it's own method:
+That's a little better already.
+
+## Step 2: break inner loop out into another method
+
+Next, start with the inner most loop and break it out into another method:
 
 ```js
 {
