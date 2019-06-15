@@ -1,4 +1,4 @@
-Any time you see more than a level or two of indent, this is a sign that it is time to refactor your code. Let's
+If you see more than a level or two of indent, this is a sign that it may be time to refactor your code. Let's
 look at an example. Open up your javascript console and copy and paste these examples to see them run.
 
 # Don't do this
