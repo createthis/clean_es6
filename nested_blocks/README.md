@@ -140,18 +140,15 @@ Notice how it is now very clear that the `inner_loop()` method takes exactly one
 
 Great! This is much more readable. It is now clear that the outer loop takes two arguments. The code is much flatter and more readable.
 
-## Step 4: Invert if and return in outer loop
+## Step 4: Invert if and return in outer and inner loops
 
-Now that our outer loop is a method, we can make use of `return` to make it even more succinct and readable.
+Now that our outer and inner loops are methods, we can make use of `return` to make them even more succinct and readable.
 
 ```js
 {
   let inner_loop = (third) => {
-    if (third) {
-      console.log('third');
-    } else {
-      console.log('not third');
-    }
+    if (!third) return console.log('not third');
+    console.log('third');
   }
 
   let outer_loop = (second, third) => {
