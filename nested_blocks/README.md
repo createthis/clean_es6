@@ -4,6 +4,7 @@ If you see more than a level or two of indent, this is a sign that it may be tim
 look at an example, below.
 
 Tip: Paste these examples into your javascript console in your browser.
+Pro Tip: Before refactoring code, it is **always** a good idea to write unit tests for the method you want to refactor. This ensures the refactored code behaves the same as the original code.
 
 # Don't do this
 ```js
